@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-hover: #E6C55A;
+  --color-dark-gray: #141414;
+  --color-black-bg: #090909;
+}
+
+:root {
+  --background: 9, 9, 9;
+  --foreground: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background-color: rgb(var(--background));
+  overflow-x: hidden;
+}
+
+.glass {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.8) 0%, rgba(15, 15, 15, 0.4) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #D4AF37 0%, #E6C55A 100%);
+}
+
+.animated-border {
+  position: relative;
+}
+.animated-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #D4AF37, transparent, #D4AF37);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.animated-border:hover::after {
+  opacity: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.5);
+}
